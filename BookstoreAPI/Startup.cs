@@ -16,6 +16,8 @@ using System.Reflection;
 using System.IO;
 using BookstoreAPI.Contracts;
 using BookstoreAPI.Services;
+using BookstoreAPI.Mappings;
+using AutoMapper;
 
 namespace BookstoreAPI
 {
@@ -44,6 +46,7 @@ namespace BookstoreAPI
                     .AllowAnyHeader());
             });
 
+         
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -56,7 +59,7 @@ namespace BookstoreAPI
                 var xpath = Path.Combine(AppContext.BaseDirectory, xfile);
                 c.IncludeXmlComments(xpath);
             });
-
+            services.AddAutoMapper(typeof(Maps));
             services.AddSingleton<ILoggerService, LoggerService>();
 
             // #1
@@ -80,7 +83,7 @@ namespace BookstoreAPI
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Book Store API");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Payment");
                 c.RoutePrefix = "";
             });
             app.UseHttpsRedirection();
