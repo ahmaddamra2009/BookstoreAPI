@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookstoreAPI</name>
+    </assembly>
+    <members>
+        <member name="T:BookstoreAPI.Controllers.HomeController">
+            <summary>
+            Test API Controller . . .
+            </summary>
+        </member>
+        <member name="M:BookstoreAPI.Controllers.HomeController.Get">
+            <summary>
+            Get Valuess
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreAPI.Controllers.HomeController.Get(System.Int32)">
+            <summary>
+            Get a value
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreAPI.Controllers.HomeController.Delete(System.Int32)">
+            
+        </member>
+    </members>
+</doc>
